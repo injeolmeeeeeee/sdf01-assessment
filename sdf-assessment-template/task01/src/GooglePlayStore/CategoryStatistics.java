@@ -25,8 +25,9 @@ public class CategoryStatistics {
         totalRating += rating; 
     }  
 
-    public static void discardedCount() {
+    public static int discardedCount() {
         discardedCount++;
+        return discardedCount;
     }
 
     public static void printStats() {
