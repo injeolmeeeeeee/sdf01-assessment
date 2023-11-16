@@ -32,10 +32,6 @@ public class Main{
 
             String[] fields = line.split(",");
 
-            if (fields.length<3) {
-                continue;
-            }
-
             String appName = fields[0].trim().toUpperCase();
             String categoryName = fields[1].trim().toUpperCase();
             double rating;
@@ -43,7 +39,7 @@ public class Main{
             try {
                 rating = Double.parseDouble(fields[2]);
             } catch (NumberFormatException e) {
-                CategoryStatistics.discardedCount();;
+                CategoryStatistics.discardedCount();
                 continue;
             }
 
@@ -58,6 +54,7 @@ public class Main{
         categoryStatsMap.forEach((category, stats) -> {
             System.out.println("Catergory: " + category);
             CategoryStatistics.printStats();
+            System.out.println("Discarded: " + stats.discardedCount() + "/n");
         });
 
         System.out.println("Total lines in file: " + totalLines);
