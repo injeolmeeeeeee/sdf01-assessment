@@ -1,25 +1,18 @@
 package ShoppingBudget;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Product {
-    private int id;
-    // private String title;
+    private String title;
     private int price;
     private int rating;
 
-    public Product(int id, int price, int rating) {
-        this.id = id;
-        // this.title = title;
+    public Product(String title, int price, int rating) {
+        this.title= title;
         this.price = price;
         this.rating = rating;
     }
 
-    public int getId() {
-        return id;
+    public String getTitle() {
+        return title;
     }
 
     public int getPrice() {
@@ -29,6 +22,4 @@ public class Product {
     public int getRating() {
         return rating;
     }
-
-    
 }
